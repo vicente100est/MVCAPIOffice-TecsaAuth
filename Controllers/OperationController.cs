@@ -4,28 +4,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MVCAPIAuthenticationTecsaUser.Moldels;
 using MVCAPIAuthenticationTecsaUser.Models.Response;
 using MVCAPIAuthenticationTecsaUser.Models.Request;
+using MVCAPIAuthenticationTecsaUser.Moldels;
 
 namespace MVCAPIAuthenticationTecsaUser.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ModuleController : ControllerBase
+    public class OperationController : ControllerBase
     {
         [HttpPost]
-        public IActionResult AddModules(ModuleRequest oModel)
+        public IActionResult AddOperation(OperationRequest oModel)
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
             try
             {
-                using(tecsaofficeContext db = new tecsaofficeContext())
+                using (tecsaofficeContext db = new tecsaofficeContext())
                 {
-                    Module oModule = new Module();
-                    oModule.NameModule = oModel.Name_module;
-                    db.Modules.Add(oModule);
+                    Operation oOperation = new Operation();
+                    oOperation.NameOperation = oModel.Name_operation;
+                    oOperation.IdModule = oModel.Id_module;
+                    db.Operations.Add(oOperation);
                     db.SaveChanges();
                     oAnswer.Successful = 1;
                 }
@@ -38,7 +39,7 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             return Ok(oAnswer);
         }
         [HttpPut("{id}")]
-        public IActionResult UpDateModule(int id, ModuleRequest oModel)
+        public IActionResult UpDateOperation(int id, OperationRequest oModel)
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
@@ -46,9 +47,10 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             {
                 using (tecsaofficeContext db = new tecsaofficeContext())
                 {
-                    Module oModule = db.Modules.Find(id);
-                    oModule.NameModule = oModel.Name_module;
-                    db.Entry(oModule).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    Operation oOperation = db.Operations.Find(id);
+                    oOperation.NameOperation = oModel.Name_operation;
+                    oOperation.IdModule = oModel.Id_module;
+                    db.Entry(oOperation).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     db.SaveChanges();
                     oAnswer.Successful = 1;
                 }
@@ -61,7 +63,7 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             return Ok(oAnswer);
         }
         [HttpDelete("{id}")]
-        public IActionResult DelateModule(int id)
+        public IActionResult DelateOperation(int id)
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
@@ -69,8 +71,8 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             {
                 using (tecsaofficeContext db = new tecsaofficeContext())
                 {
-                    Module oModule = db.Modules.Find(id);
-                    db.Remove(oModule);
+                    Operation oOperation = db.Operations.Find(id);
+                    db.Remove(oOperation);
                     db.SaveChanges();
                     oAnswer.Successful = 1;
                 }

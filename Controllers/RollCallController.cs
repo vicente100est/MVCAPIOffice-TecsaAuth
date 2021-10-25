@@ -1,31 +1,32 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MVCAPIAuthenticationTecsaUser.Models.Request;
+using MVCAPIAuthenticationTecsaUser.Models.Response;
+using MVCAPIAuthenticationTecsaUser.Moldels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MVCAPIAuthenticationTecsaUser.Moldels;
-using MVCAPIAuthenticationTecsaUser.Models.Response;
-using MVCAPIAuthenticationTecsaUser.Models.Request;
 
 namespace MVCAPIAuthenticationTecsaUser.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ModuleController : ControllerBase
+    public class RollCallController : ControllerBase
     {
         [HttpPost]
-        public IActionResult AddModules(ModuleRequest oModel)
+        public IActionResult AddRollCall(RollCallRequest oModel)
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
             try
             {
-                using(tecsaofficeContext db = new tecsaofficeContext())
+                using (tecsaofficeContext db = new tecsaofficeContext())
                 {
-                    Module oModule = new Module();
-                    oModule.NameModule = oModel.Name_module;
-                    db.Modules.Add(oModule);
+                    RollCall oRollCall = new RollCall();
+                    oRollCall.NameDay = oModel.Name_day;
+                    oRollCall.IdUser = oModel.Id_user;
+                    db.RollCalls.Add(oRollCall);
                     db.SaveChanges();
                     oAnswer.Successful = 1;
                 }
@@ -38,7 +39,7 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             return Ok(oAnswer);
         }
         [HttpPut("{id}")]
-        public IActionResult UpDateModule(int id, ModuleRequest oModel)
+        public IActionResult UpDateRollCall(int id, RollCallRequest oModel)
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
@@ -46,9 +47,10 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             {
                 using (tecsaofficeContext db = new tecsaofficeContext())
                 {
-                    Module oModule = db.Modules.Find(id);
-                    oModule.NameModule = oModel.Name_module;
-                    db.Entry(oModule).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    RollCall oRollCall = db.RollCalls.Find(id);
+                    oRollCall.NameDay = oModel.Name_day;
+                    oRollCall.IdUser = oModel.Id_user;
+                    db.Entry(oRollCall).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     db.SaveChanges();
                     oAnswer.Successful = 1;
                 }
@@ -61,7 +63,7 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             return Ok(oAnswer);
         }
         [HttpDelete("{id}")]
-        public IActionResult DelateModule(int id)
+        public IActionResult DeleteRollCall(int id)
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
@@ -69,8 +71,8 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             {
                 using (tecsaofficeContext db = new tecsaofficeContext())
                 {
-                    Module oModule = db.Modules.Find(id);
-                    db.Remove(oModule);
+                    RollCall oRollCall = db.RollCalls.Find(id);
+                    db.Remove(oRollCall);
                     db.SaveChanges();
                     oAnswer.Successful = 1;
                 }

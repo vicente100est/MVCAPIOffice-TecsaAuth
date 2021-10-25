@@ -1,31 +1,31 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MVCAPIAuthenticationTecsaUser.Models.Request;
+using MVCAPIAuthenticationTecsaUser.Models.Response;
+using MVCAPIAuthenticationTecsaUser.Moldels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MVCAPIAuthenticationTecsaUser.Moldels;
-using MVCAPIAuthenticationTecsaUser.Models.Response;
-using MVCAPIAuthenticationTecsaUser.Models.Request;
 
 namespace MVCAPIAuthenticationTecsaUser.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ModuleController : ControllerBase
+    public class RolController : ControllerBase
     {
         [HttpPost]
-        public IActionResult AddModules(ModuleRequest oModel)
+        public IActionResult AddRol(RolRequest oModel)
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
             try
             {
-                using(tecsaofficeContext db = new tecsaofficeContext())
+                using (tecsaofficeContext db = new tecsaofficeContext())
                 {
-                    Module oModule = new Module();
-                    oModule.NameModule = oModel.Name_module;
-                    db.Modules.Add(oModule);
+                    Rol oRol = new Rol();
+                    oRol.Name = oModel.Name;
+                    db.Rols.Add(oRol);
                     db.SaveChanges();
                     oAnswer.Successful = 1;
                 }
@@ -38,7 +38,7 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             return Ok(oAnswer);
         }
         [HttpPut("{id}")]
-        public IActionResult UpDateModule(int id, ModuleRequest oModel)
+        public IActionResult UpDateRol(int id, RolRequest oModel)
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
@@ -46,9 +46,9 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             {
                 using (tecsaofficeContext db = new tecsaofficeContext())
                 {
-                    Module oModule = db.Modules.Find(id);
-                    oModule.NameModule = oModel.Name_module;
-                    db.Entry(oModule).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                    Rol oRol = db.Rols.Find(id);
+                    oRol.Name = oModel.Name;
+                    db.Entry(oRol).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                     db.SaveChanges();
                     oAnswer.Successful = 1;
                 }
@@ -61,7 +61,7 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             return Ok(oAnswer);
         }
         [HttpDelete("{id}")]
-        public IActionResult DelateModule(int id)
+        public IActionResult DelateRol(int id)
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
@@ -69,8 +69,8 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             {
                 using (tecsaofficeContext db = new tecsaofficeContext())
                 {
-                    Module oModule = db.Modules.Find(id);
-                    db.Remove(oModule);
+                    Rol oRol = db.Rols.Find(id);
+                    db.Remove(oRol);
                     db.SaveChanges();
                     oAnswer.Successful = 1;
                 }
