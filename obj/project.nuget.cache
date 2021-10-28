@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IRH6IjY0/2i/MDkr4R1AWJm0WEMjRvNSRze1C2yu2N/dpjgMKGfd+wl7pdcfYWPVowNJ2XsSrni088mdTu0YLw==",
+  "dgSpecHash": "/d3AHgDdIBpHgdltz9VFndSUazuxSW3N4UretS182MZ//rJhkjQeSFYwifK8Dpxcqz4SwR+vlL8bHpcyRoMF8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vicen\\Desktop\\OfficeTecsa\\Back\\MVCAPIAuthenticationTecsaUser\\MVCAPIAuthenticationTecsaUser.csproj",
+  "projectFilePath": "C:\\Users\\vicen\\OneDrive\\Escritorio\\ASP NET CORE\\MVCAPIOffice-TecsaAuth\\MVCAPIAuthenticationTecsaUser.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vicen\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\vicen\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

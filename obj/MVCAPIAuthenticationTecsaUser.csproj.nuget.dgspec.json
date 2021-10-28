@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vicen\\Desktop\\OfficeTecsa\\Back\\MVCAPIAuthenticationTecsaUser\\MVCAPIAuthenticationTecsaUser.csproj": {}
+    "C:\\Users\\vicen\\OneDrive\\Escritorio\\ASP NET CORE\\MVCAPIOffice-TecsaAuth\\MVCAPIAuthenticationTecsaUser.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vicen\\Desktop\\OfficeTecsa\\Back\\MVCAPIAuthenticationTecsaUser\\MVCAPIAuthenticationTecsaUser.csproj": {
+    "C:\\Users\\vicen\\OneDrive\\Escritorio\\ASP NET CORE\\MVCAPIOffice-TecsaAuth\\MVCAPIAuthenticationTecsaUser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vicen\\Desktop\\OfficeTecsa\\Back\\MVCAPIAuthenticationTecsaUser\\MVCAPIAuthenticationTecsaUser.csproj",
+        "projectUniqueName": "C:\\Users\\vicen\\OneDrive\\Escritorio\\ASP NET CORE\\MVCAPIOffice-TecsaAuth\\MVCAPIAuthenticationTecsaUser.csproj",
         "projectName": "MVCAPIAuthenticationTecsaUser",
-        "projectPath": "C:\\Users\\vicen\\Desktop\\OfficeTecsa\\Back\\MVCAPIAuthenticationTecsaUser\\MVCAPIAuthenticationTecsaUser.csproj",
+        "projectPath": "C:\\Users\\vicen\\OneDrive\\Escritorio\\ASP NET CORE\\MVCAPIOffice-TecsaAuth\\MVCAPIAuthenticationTecsaUser.csproj",
         "packagesPath": "C:\\Users\\vicen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vicen\\Desktop\\OfficeTecsa\\Back\\MVCAPIAuthenticationTecsaUser\\obj\\",
+        "outputPath": "C:\\Users\\vicen\\OneDrive\\Escritorio\\ASP NET CORE\\MVCAPIOffice-TecsaAuth\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

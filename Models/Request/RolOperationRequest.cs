@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace MVCAPIAuthenticationTecsaUser.Models.Request
 {
-    public class RollCallRequest
+    public class RolOperationRequest
     {
-        public string Name_day { get; set; }
-        public int Id_user { get; set; }
+        public int Id_up { get; set; }
+        public int Id_rol { get; set; }
+        public int Id_operation { get; set; }
     }
 }
