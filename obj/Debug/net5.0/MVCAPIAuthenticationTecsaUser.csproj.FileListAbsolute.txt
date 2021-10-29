@@ -79,4 +79,3 @@ C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\bin\Debug
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\obj\Debug\net5.0\MVCAPIAuthenticationTecsaUser.csproj.CopyComplete
