@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using MVCAPIAuthenticationTecsaUser.Models.Response;
 using MVCAPIAuthenticationTecsaUser.Moldels;
 using System;
@@ -8,11 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MVCAPIAuthenticationTecsaUser.Controllers
+namespace MVCAPIAuthenticationTecsaUser.Controllers.GetMethods
 {
-    [Route("api/[controller]")]
+    [Route("api/getmethod/[controller]")]
     [ApiController]
-    public class GetMethodsController : ControllerBase
+    public class OpeationModuleController : ControllerBase
     {
         [HttpGet]
         public IActionResult GetOpeationModule()
@@ -21,13 +20,13 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             oAnswer.Successful = 0;
             try
             {
-                using(tecsaofficeContext db = new tecsaofficeContext())
+                using (tecsaofficeContext db = new tecsaofficeContext())
                 {
                     var operationModule = db.Operations.Join(
                         db.Modules,
                         ope => ope.IdModule,
                         mod => mod.IdModule,
-                        (ope,mod) =>
+                        (ope, mod) =>
                             new { ope.IdOperation, ope.NameOperation, mod.NameModule }
                         ).ToList();
 
@@ -43,8 +42,8 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers
             return Ok(oAnswer);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult GetOpeationModuleSpecific (int id)
+        [HttpGet("specific/{id}")]
+        public IActionResult GetOpeationModuleSpecific(int id)
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
