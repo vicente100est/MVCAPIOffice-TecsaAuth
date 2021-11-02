@@ -11,10 +11,10 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers.GetMethods
 {
     [Route("api/getmethods/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class RolController : ControllerBase
     {
         [HttpGet]
-        public IActionResult GetUsers()
+        public IActionResult GetRol()
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
@@ -22,21 +22,9 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers.GetMethods
             {
                 using (tecsaofficeContext db = new tecsaofficeContext())
                 {
-                    var user = (
-                        from tu in db.Tecsausers
-                        from rl in db.Rols
-                        where tu.IdRol == rl.IdRol
-                        select new
-                        {
-                            tu.IdUser,
-                            tu.NameUser,
-                            tu.EmailUser,
-                            tu.DateUser,
-                            rl.Name
-                        }).ToList();
-
+                    var lst = db.Rols.ToList();
                     oAnswer.Successful = 1;
-                    oAnswer.Data = user;
+                    oAnswer.Data = lst;
                 }
             }
             catch (Exception ex)
@@ -48,7 +36,7 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers.GetMethods
         }
 
         [HttpGet("specific/{id}")]
-        public IActionResult GetUsersSpecific(int id)
+        public IActionResult GetRolSpecific(int id)
         {
             Answer oAnswer = new Answer();
             oAnswer.Successful = 0;
@@ -56,21 +44,9 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers.GetMethods
             {
                 using (tecsaofficeContext db = new tecsaofficeContext())
                 {
-                    var user = (
-                        from tu in db.Tecsausers
-                        from rl in db.Rols
-                        where tu.IdRol == rl.IdRol
-                        select new
-                        {
-                            tu.IdUser,
-                            tu.NameUser,
-                            tu.EmailUser,
-                            tu.DateUser,
-                            rl.Name
-                        }).FirstOrDefault(x => x.IdUser == id);
-
+                    var lst = db.Rols.FirstOrDefault(x => x.IdRol == id);
                     oAnswer.Successful = 1;
-                    oAnswer.Data = user;
+                    oAnswer.Data = lst;
                 }
             }
             catch (Exception ex)

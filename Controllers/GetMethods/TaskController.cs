@@ -152,5 +152,40 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers.GetMethods
 
             return Ok(oAnswer);
         }
+
+        [HttpGet("User/{idUser}")]
+        public IActionResult GetTaskUser(int idUser)
+        {
+            Answer oAnswer = new Answer();
+            oAnswer.Successful = 0;
+            try
+            {
+                using(tecsaofficeContext db = new tecsaofficeContext())
+                {
+                    var taskUserRol = (
+                        from tk in db.Workings
+                        from rl in db.Rols
+                        from tu in db.Tecsausers
+                        where tu.IdUser == idUser && tu.IdRol == rl.IdRol && rl.IdRol == tk.IdRol
+                            && tk.StatusWork == "ToDo"
+                        select new
+                        {
+                            tk.IdWork,
+                            tk.TitleWork,
+                            tk.DescriptionWork,
+                            tk.StatusWork
+                        }).ToList();
+
+                    oAnswer.Successful = 1;
+                    oAnswer.Data = taskUserRol;
+                }
+            }
+            catch (Exception ex)
+            {
+                oAnswer.Message = ex.Message;
+            }
+
+            return Ok(oAnswer);
+        }
     }
 }

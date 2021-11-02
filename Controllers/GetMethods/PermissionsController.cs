@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MVCAPIAuthenticationTecsaUser.Controllers.GetMethods
 {
-    [Route("api/getmethod/[controller]")]
+    [Route("api/getmethods/[controller]")]
     [ApiController]
     public class PermissionsController : ControllerBase
     {
