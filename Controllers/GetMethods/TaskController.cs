@@ -164,10 +164,8 @@ namespace MVCAPIAuthenticationTecsaUser.Controllers.GetMethods
                 {
                     var taskUserRol = (
                         from tk in db.Workings
-                        from rl in db.Rols
                         from tu in db.Tecsausers
-                        where tu.IdUser == idUser && tu.IdRol == rl.IdRol && rl.IdRol == tk.IdRol
-                            && tk.StatusWork == "ToDo"
+                        where tu.IdUser == idUser && tu.IdRol == tk.IdRol && tk.StatusWork == "ToDo"
                         select new
                         {
                             tk.IdWork,

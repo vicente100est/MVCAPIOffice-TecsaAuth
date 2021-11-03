@@ -35,6 +35,7 @@ namespace MVCAPIAuthenticationTecsaUser.Services
                                                     d.PasswordUser == sPassword).FirstOrDefault();
                 if (usuario == null) return null;
 
+                userresponse.Id_user = usuario.IdUser;
                 userresponse.Email_user = usuario.EmailUser;
                 userresponse.Token = GetToken(usuario);
             }

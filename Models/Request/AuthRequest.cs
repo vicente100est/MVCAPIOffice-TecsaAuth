@@ -8,6 +8,7 @@ namespace MVCAPIAuthenticationTecsaUser.Models.Request
 {
     public class AuthRequest
     {
+        public int Id_User { get; set; }
         [Required]
         public string Email_user { get; set; }
         [Required]
