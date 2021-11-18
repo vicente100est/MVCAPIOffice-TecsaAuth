@@ -65,7 +65,6 @@ C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\obj\Debug
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\obj\Debug\net5.0\MVCAPIAuthenticationTecsaUser.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\obj\Debug\net5.0\MVCAPIAuthenticationTecsaUser.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\obj\Debug\net5.0\staticwebassets\MVCAPIAuthenticationTecsaUser.StaticWebAssets.Manifest.cache
-C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\obj\Debug\net5.0\staticwebassets\MVCAPIAuthenticationTecsaUser.StaticWebAssets.xml
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\obj\Debug\net5.0\scopedcss\bundle\MVCAPIAuthenticationTecsaUser.styles.css
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\obj\Debug\net5.0\MVCAPIAuthenticationTecsaUser.RazorTargetAssemblyInfo.cache
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\obj\Debug\net5.0\MVCAPIAuthenticationTecsaUser.dll
@@ -79,3 +78,4 @@ C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\bin\Debug
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\vicen\OneDrive\Escritorio\ASP NET CORE\MVCAPIOffice-TecsaAuth\obj\Debug\net5.0\MVCAPIAuthenticationTecsaUser.csproj.CopyComplete
